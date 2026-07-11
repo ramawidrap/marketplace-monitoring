@@ -5,7 +5,7 @@
   "schedule_human": "Every 6 hours (00:00, 06:00, 12:00, 18:00 UTC = 07:00, 13:00, 19:00, 01:00 WIB)",
   "enabled": true,
   "model": "claude-sonnet-5",
-  "environment_id": "env_012sjnNP8KvBxNJiLcFy6zXE",
+  "environment_id": "env_01TrGctojJibvH85YVWHm3HP",
   "allowed_tools": ["Bash", "Read", "Write", "Edit", "Glob", "Grep", "WebFetch", "WebSearch"],
   "source_repository": "https://github.com/ramawidrap/marketplace-monitoring",
   "prompt_file": "prompt.md",
