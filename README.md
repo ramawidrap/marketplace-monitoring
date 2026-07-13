@@ -1,6 +1,6 @@
 # marketplace-monitoring
 
-Automated MacBook price monitoring across Indonesian/SEA marketplaces (Tokopedia, Shopee Indonesia, Carousell), powered by a scheduled Claude Code cloud routine.
+Automated MacBook price monitoring across Indonesian/SEA marketplaces (Tokopedia, Shopee Indonesia, Carousell, Facebook Marketplace), powered by a scheduled Claude Code cloud routine.
 
 ## How it works
 
