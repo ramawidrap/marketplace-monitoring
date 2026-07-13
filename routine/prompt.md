@@ -38,4 +38,16 @@ Determine the current date/time with `date` (report times in WIB, UTC+7). Write 
 ## Commit
 Commit the new report with message `report: MacBook price check YYYY-MM-DD HHMM WIB` and push to the main branch. If the push fails, still leave the report committed locally and clearly state the push failure in your final output.
 
+## Telegram notification (required final step)
+After the commit/push step, send a summary of this run to Telegram:
+- The bot token is in the environment variable `BOT_TOKEN`. The recipient chat id is `1485471988`.
+- Send it with: `curl -s "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" --data-urlencode "chat_id=1485471988" --data-urlencode "text=<message>"`
+- Compose the message as PLAIN TEXT (no parse_mode, no markdown), under 3500 characters:
+  - Line 1: "MacBook price check — YYYY-MM-DD HH:MM WIB"
+  - Per product: the count of listings under the threshold, and if any exist, the cheapest match (title, price, direct URL). If none, one line with the cheapest listing seen this run marked "(above threshold)".
+  - One short coverage line (e.g. "Tokopedia OK; Shopee/Carousell blocked — candidates only").
+  - A link to the report file on GitHub, pointing at the branch you actually pushed to (e.g. https://github.com/ramawidrap/marketplace-monitoring/blob/<branch>/reports/<file>).
+- Check the JSON response: if it does not contain "ok":true, retry once; if it still fails, state the Telegram failure clearly in your final output.
+- NEVER print the value of BOT_TOKEN in the report, commits, logs, or your output.
+
 Keep total runtime reasonable: if a platform is clearly blocking you after a few attempts, record that in the Coverage section and move on.

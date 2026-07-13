@@ -9,5 +9,7 @@
   "allowed_tools": ["Bash", "Read", "Write", "Edit", "Glob", "Grep", "WebFetch", "WebSearch"],
   "source_repository": "https://github.com/ramawidrap/marketplace-monitoring",
   "prompt_file": "prompt.md",
+  "telegram_chat_id": "1485471988",
+  "telegram_bot_token_env": "BOT_TOKEN (set in the routine's cloud environment settings, not in this repo)",
   "manage_url": "https://claude.ai/code/routines/trig_01GzAja9j5HsNqX9k7iPut95"
 }
